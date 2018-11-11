@@ -1,6 +1,8 @@
 package org.neos.spring.standalone.soccer.config;
 
 import org.neos.spring.standalone.soccer.business.*;
+import org.neos.spring.standalone.soccer.domain.Manchester;
+import org.neos.spring.standalone.soccer.domain.RealMadrid;
 
 public class RunApplicationWithoutSpring {
 

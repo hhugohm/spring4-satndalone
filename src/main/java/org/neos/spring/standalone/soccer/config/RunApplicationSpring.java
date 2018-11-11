@@ -18,5 +18,6 @@ public class RunApplicationSpring {
             System.out.println("Name Bean: " + nameBean );
         }
 
+
     }
 }
