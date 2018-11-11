@@ -35,4 +35,6 @@ public class SoccerGame  implements Game {
     public String playGame() {
         return Math.random() <0.5 ? getHomeTeam().getName() : getAwayTeam().getName();
     }
+
+
 }

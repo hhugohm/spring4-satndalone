@@ -9,8 +9,7 @@ public class RunApplicationSpring {
     public static  void main(String args[]){
         ApplicationContext context= new AnnotationConfigApplicationContext(AppConfig.class);
         Game game = context.getBean("game",Game.class);
-        Team team = context.getBean("atleticoMadrid", Team.class);
-        System.out.println("MY FAVORITE TEAM: "+ team.getName());
+
         System.out.println(game.playGame());
 
         System.out.println("-----------------");

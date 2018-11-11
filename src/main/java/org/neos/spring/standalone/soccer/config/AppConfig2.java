@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig2 {
-
     @Bean
     public Team atleticoMadrid(){
         return new AtleticoMadrid();
