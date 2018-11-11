@@ -7,6 +7,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
+import javax.annotation.Resource;
+
 
 @Configuration
 @ComponentScan(basePackages = "org.neos.spring.standalone.soccer.domain")
@@ -16,13 +18,12 @@ public class AppConfig {
     @Qualifier("manchesterCity")
     private Team home;
 
-    @Autowired
-    @Qualifier("realMadrid")
-    private Team away;
+    @Resource
+    private Team realMadrid;
 
     @Bean
     public Game game(){
-       return new SoccerGame(home,away);
+       return new SoccerGame(home,realMadrid);
     }
 
 }
