@@ -36,5 +36,9 @@ public class SoccerGame  implements Game {
         return Math.random() <0.5 ? getHomeTeam().getName() : getAwayTeam().getName();
     }
 
+    @Override
+    public String toString(){
+        return String.format("Game between:  %s vs %s", this.homeTeam.getName() ,this.awayTeam.getName());
+    }
 
 }

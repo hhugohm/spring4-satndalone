@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 
 @Configuration
@@ -15,15 +17,11 @@ import javax.annotation.Resource;
 public class AppConfig {
 
     @Autowired
-    @Qualifier("manchesterCity")
-    private Team home;
-
-    @Resource
-    private Team realMadrid;
-
+    private List<Team> listTeams;
     @Bean
+    @Scope("prototype")
     public Game game(){
-       return new SoccerGame(home,realMadrid);
+        return new SoccerGame(listTeams.get(0),listTeams.get(1));
     }
 
 }
