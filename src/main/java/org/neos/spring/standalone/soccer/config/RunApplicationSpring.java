@@ -5,10 +5,16 @@ import org.neos.spring.standalone.soccer.business.Team;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import java.text.NumberFormat;
+
 public class RunApplicationSpring {
     public static  void main(String args[]){
         AnnotationConfigApplicationContext context= new AnnotationConfigApplicationContext(AppConfig.class);
-        Game game1 = context.getBean("game",Game.class);
+
+        NumberFormat nf = context.getBean(NumberFormat.class);
+        double amount=18954626.7888;
+        System.out.println(nf.format(amount));
+      /*  Game game1 = context.getBean("game",Game.class);
         System.out.println(game1);
 
         Team realMadrid = context.getBean("realMadrid",Team.class);
@@ -16,7 +22,7 @@ public class RunApplicationSpring {
         game2.setAwayTeam(realMadrid);
         System.out.println(game2);
         System.out.println(game1);
-        System.out.println("-----------------");
+        System.out.println("-----------------");*/
         /*System.out.println("There are: " + context.getBeanDefinitionCount() + " beans");
         for (String nameBean:context.getBeanDefinitionNames()){
             System.out.println("Name Bean: " + nameBean );

@@ -7,7 +7,8 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
-import javax.annotation.Resource;
+
+import java.text.NumberFormat;
 import java.util.List;
 
 
@@ -17,10 +18,15 @@ public class AppConfig {
 
     @Autowired
     private List<Team> listTeams;
+
+
     @Bean
     @Scope("prototype")
     public Game game(){
         return new SoccerGame(listTeams.get(0),listTeams.get(1));
     }
-
+    @Bean
+    public NumberFormat nf(){
+        return NumberFormat.getCurrencyInstance();
+    }
 }
