@@ -1,5 +1,8 @@
 package org.neos.spring.standalone.soccer.business;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+
 public class SoccerGame  implements Game {
     private Team homeTeam;
     private Team awayTeam;
@@ -9,6 +12,14 @@ public class SoccerGame  implements Game {
     public SoccerGame(Team homeTeam,Team awayTeam){
       this.homeTeam=homeTeam;
       this.awayTeam=awayTeam;
+    }
+    @PostConstruct
+    public void startGame(){
+        System.out.println("Starting  Soccer game!!");
+    }
+    @PreDestroy
+    public void endGame(){
+        System.out.println("Ending  Soccer game!!");
     }
 
     @Override

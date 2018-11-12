@@ -13,15 +13,15 @@ import java.util.List;
 
 
 @Configuration
-@ComponentScan(basePackages = "org.neos.spring.standalone.soccer.domain")
+@ComponentScan(basePackages = "org.neos.spring.standalone.soccer")
 public class AppConfig {
 
     @Autowired
     private List<Team> listTeams;
 
-
+   // @Bean(initMethod = "startGame", destroyMethod = "endGame")
     @Bean
-    @Scope("prototype")
+    //@Scope("prototype")
     public Game game(){
         return new SoccerGame(listTeams.get(0),listTeams.get(1));
     }

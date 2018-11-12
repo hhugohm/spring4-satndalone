@@ -14,15 +14,15 @@ public class RunApplicationSpring {
         NumberFormat nf = context.getBean(NumberFormat.class);
         double amount=18954626.7888;
         System.out.println(nf.format(amount));
-      /*  Game game1 = context.getBean("game",Game.class);
+        Game game1 = context.getBean("game",Game.class);
         System.out.println(game1);
 
-        Team realMadrid = context.getBean("realMadrid",Team.class);
-        Game game2 = context.getBean("game",Game.class);
-        game2.setAwayTeam(realMadrid);
-        System.out.println(game2);
-        System.out.println(game1);
-        System.out.println("-----------------");*/
+        //Team realMadrid = context.getBean("realMadrid",Team.class);
+       // Game game2 = context.getBean("game",Game.class);
+       // game2.setAwayTeam(realMadrid);
+       // System.out.println(game2);
+       // System.out.println(game1);
+        System.out.println("-----------------");
         /*System.out.println("There are: " + context.getBeanDefinitionCount() + " beans");
         for (String nameBean:context.getBeanDefinitionNames()){
             System.out.println("Name Bean: " + nameBean );
