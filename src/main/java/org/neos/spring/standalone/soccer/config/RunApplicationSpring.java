@@ -1,5 +1,6 @@
 package org.neos.spring.standalone.soccer.config;
 
+import org.neos.spring.standalone.soccer.business.Game;
 import org.neos.spring.standalone.soccer.business.Team;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -13,16 +14,17 @@ public class RunApplicationSpring {
         context.register(RunApplicationSpring.class);
         context.refresh();
         AppConfig  testBean =  context.getBean("configBean",AppConfig.class);
-        System.out.println(testBean.game().playGame());
+
+        Game game1 = testBean.game();
+        System.out.println(game1);
         System.out.println("-----------------");
+        AppConfig  testBean2 =  context.getBean("configBean",AppConfig.class);
+        Game game2 = testBean2.game();
         Team realMadrid = context.getBean("realMadrid",Team.class);
-        testBean.game().setAwayTeam(realMadrid);
-        System.out.println(testBean.game().playGame());
-        System.out.println("-----------------");
-        System.out.println("There are: " + context.getBeanDefinitionCount() + " beans");
-        for (String nameBean:context.getBeanDefinitionNames()){
-            System.out.println("Name Bean: " + nameBean );
-        }
+        game2.setAwayTeam(realMadrid);
+        System.out.println(game2);
+        System.out.println(game1);
+
         context.close();
     }
 }

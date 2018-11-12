@@ -5,7 +5,6 @@ import org.springframework.stereotype.Component;
 
 @Component("manchesterCity")
 public class Manchester implements Team {
-
     @Override
     public String getName() {
         return "MANCHERSTE CITY";
